@@ -1,0 +1,165 @@
+/**** Catalogue Stylesheet - Phil Cheshire @ Travall - June 2016 ****/
+
+/* Load fonts */
+@font-face {
+    font-family: 'ubunturegular';
+    src: url('../fonts/ubuntu-regular-webfont.woff2') format('woff2'),
+         url('../fonts/ubuntu-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/************ CSS **********/
+
+/*** MOBILE STUFF - NOT USED FOR NOW ***/
+.header, 
+.sku-column, 
+.variant-column {
+  width:100%; 
+  border-top:5px solid #fff; 
+  border-right:5px solid #fff;
+}
+.header h3 {line-height:1em;}
+.product-caption {display:inline-block; width:100%; background: none #9d999a; padding:5px 0; color:#fff; font-size:0.9em; bottom:0;}
+.variantMobileColumn {display:block;}
+#catalogueProductsMatrixMobile {display:none;}
+#headerContainer h3.header {height:140px; width:140px; line-height:1em; background: none #9d999a; color:#fff;}
+.skus {height:61px;}
+#mobileVariantsContainer div[class^="variantRow"]:nth-of-type(odd) div.variant {background-color: #9d999a;}
+#mobileVariantsContainer div[class^="variantRow"]:nth-of-type(even) div.variant {background-color: #656365;}
+#mobileVariantsContainer div:nth-of-type(even) {background-color: #f6f6f6;}
+#mobileVariantsContainer div:nth-of-type(odd) {background-color: #e5e3e4;}
+/**********/
+
+/**** CONTAINERS AND TOP BAR ****/
+html {position: relative; overflow-y:auto;}
+html, body {font-size:16px; width:100%; height:100%; }
+#catalogueContainer {margin:0 auto; text-align:center; position: relative; }
+#catalogueContainer #topBar {background: none #656365; text-align:center; width:99.42%; background: none #656365; border-bottom:5px solid #fff;}
+#catalogueContainer #topBar h2 {color:#fff; margin:0; padding:0 0 5px 0;}
+#catalogueContainer #topBar h2 img {padding-top:5px;}
+#catalogueContainer #topBar h2 img.travall-logo {margin-right:20px; height:60px;}
+#catalogueContainer #topBar h2 img.vehicle-selector {height:80px;}
+
+/***** MAKES AND AMODELS *****/
+#makesAndModels {margin:0 auto; font-family: 'ubunturegular', Arial, Helvetica, sans-serif;  height:auto;}
+#makesAndModels .row {clear:both; min-height:140px; margin-left: 0px!important;}
+#modelsContainer {display:none; clear:left; text-align:center; height:auto; margin:0 auto;}
+#makesAndModels .make, 
+#modelsContainer .model, 
+#modelsContainer .empty {
+    float:left;
+    border-right:5px solid #fff; 
+    border-bottom:5px solid #fff; 
+    text-align:center; 
+    position: relative;
+    max-width:145px;
+}
+
+#modelsContainer .model, 
+#modelsContainer .empty {height:140px;}
+#makesAndModels .make:hover, #modelsContainer .model:hover {opacity:0.7!important;}
+#makesAndModels .make:hover, #modelsContainer .model:hover {opacity:0.7!important;}
+#makesAndModels .make.selected:hover, #modelsContainer .model.selected:hover {opacity:1!important;}
+#makesAndModels .make, #modelsContainer .model {cursor:pointer;}
+#makesAndModels .make .caption {position:absolute; bottom: 0; left:0; display:inline-block; width:100%; color:#fff; background: none #9d999a; height:22px; font-size:0.8em; font-weight:300; padding-top:2px;}
+#modelsContainer .model {background: url(../sites/default/files/catalogue/car-buttons/car-square-alternate.png) center top no-repeat #9d999a; background-size: cover; font-size:0.89em;}
+#modelsContainer .model.alternate {background: url(../sites/default/files/catalogue/car-buttons/car-square.png) center top no-repeat #656365; background-size: cover}
+#modelsContainer .model .caption {position:absolute; top:40px; left:0; display:inline-block; width:100%; color:#fff;}
+#modelsContainer .empty  {opacity: 0.2; background: none #9d999a;}
+#modelsContainer .empty.alternate {background: none #656365;}
+
+/****** MATRIX *****/
+#catalogueProductsMatrix {border:none; clear:both; border-bottom:5px solid #fff; padding:0; margin:0; display:none;}
+#catalogueProductsMatrix tr[class^="variantRow"]:nth-of-type(odd) td.variant {background-color: #9d999a;}
+#catalogueProductsMatrix tr[class^="variantRow"]:nth-of-type(odd) td.variant img {width:90%;}
+#catalogueProductsMatrix tr[class^="variantRow"]:nth-of-type(odd) td.variant img.lazy {width:35%;}
+#catalogueProductsMatrix tr[class^="variantRow"]:nth-of-type(even) td.variant {background-color: #656365;}
+#catalogueProductsMatrix tr[class^="variantRow"]:nth-of-type(even) td.variant img {width:90%;}
+#catalogueProductsMatrix tr[class^="variantRow"]:nth-of-type(even) td.variant img.lazy {width:35%;}
+
+#catalogueProductsMatrix tr:nth-of-type(even) {background-color: #f6f6f6;}
+#catalogueProductsMatrix tr:nth-of-type(odd) {background-color: #e5e3e4;}
+#catalogueProductsMatrix tr:nth-of-type(1) {background: none transparent;}
+
+#catalogueProductsMatrix th {background: none #fff; border-right:5px solid #fff; border-bottom:5px solid #fff; padding:0; margin:0; vertical-align: bottom; text-align:left;}
+#catalogueProductsMatrix th#modelType {background: none #9d999a; color:#fff; font-size: 1em; height:140px;}
+#catalogueProductsMatrix th img {display:block;}
+#catalogueProductsMatrix th span {display:inline-block; width:100%; background: none #9d999a; padding:5px 0; color:#fff; font-size:0.9em; bottom:0;}
+#catalogueProductsMatrix th#tg {height:140px; background: url(../sites/default/files/catalogue/products/TravallGuard.png) left top no-repeat transparent; background-size: cover}
+#catalogueProductsMatrix th#td {height:140px; background: url(../sites/default/files/catalogue/products/TravallDivider.png) left top no-repeat transparent; background-size: cover}
+#catalogueProductsMatrix th#tp {height:140px; background: url(../sites/default/files/catalogue/products/TravallProtector.png) left top no-repeat transparent; background-size: cover}
+#catalogueProductsMatrix th#tl {height:140px; background: url(../sites/default/files/catalogue/products/TravallLiner.png) left top no-repeat transparent; background-size: cover}
+#catalogueProductsMatrix th#tm {height:140px; background: url(../sites/default/files/catalogue/products/TravallMats.png) left top no-repeat transparent; background-size: cover}
+
+#catalogueProductsMatrix td, #catalogueProductsMatrix th {font-weight: 300; text-align:center; padding:0; margin:0;}
+#catalogueProductsMatrix td {border-right:5px solid #fff; font-size: 0.8em; border-bottom:1px solid #fff; color: #656365; text-align:left; padding-bottom:10px; padding-top:10px; line-height:1.2em;}
+#catalogueProductsMatrix td div.sku {padding-left:40px; padding-bottom:5px;}
+#catalogueProductsMatrix td:first-child {color:#fff; text-align:center; padding-left:0;}
+#catalogueProductsMatrix td:last-child {border-right:none;}
+
+#catalogueProductsMatrix td.variant small {font-size:80%;}
+
+/***** WARNINGS *****/
+.warningButton {cursor:pointer; display:inline-block; opacity:1;}
+.warningButton img {vertical-align:text-bottom; margin-bottom:1px;}
+.warningButton.inactive {cursor:default; opacity:0.5;}
+#warnings {
+  clear:both; 
+  position:absolute; 
+  background:none #9d999a; 
+  border:3px solid #fff;
+  min-height:100px;
+  z-index: 10001; 
+  display:none; 
+  font-weight:300; 
+  text-align:center; 
+  font-size: 1.3em;
+  line-height:1.2em; 
+  width:300px;
+  color:#fff; 
+  padding:30px 40px 30px 40px;
+  left: 0;
+  right: 0;
+  margin: auto
+}
+#warnings #close {background: none #fff; color:#9d999a; font-size:1.15em; position:absolute; right:0; top:0; padding:3px 3px 6px 6px;  cursor:pointer;}
+.warning-catalogue {display:none; padding:0 0 10px 0;  font-family: 'ubunturegular', Arial, Helvetica, sans-serif;}
+#popoutBG {background: none #000; opacity:0.5; display:none; position:absolute; left: 0; top :0; z-index:10000; width:100%; height:100%; position: fixed;}
+
+/***** MEDIA QUERIES ******/
+/* iPhone 4 - minimum size */
+@media only screen and (max-width: 28em) {
+  #catalogueContainer {width:290px;} 
+  #modelsContainer {width:290px;}
+  #catalogueContainer #topBar h2 img.travall-logo {margin-right:0;}
+}
+/* from just above iPhone 4 (so will catch 5 and 6) to max-width 640px, mobile-only styles */
+@media only screen and (min-width: 28.063em) and (max-width: 40em) {
+  #catalogueContainer {width:435px;}
+  #modelsContainer {width:435px;}
+  #catalogueProductsMatrix td div.sku {padding-left:5px;}
+  #headerContainer h3.header {display: none;}
+  #catalogueProductsMatrix th#modelType {font-size: 0.75em;}
+  #catalogueProductsMatrix th span {font-size:0.65em;}
+  #catalogueProductsMatrix td {font-size: 0.6em;} 
+}
+/* min-width 641px, medium screens */
+@media only screen and (min-width: 40.063em) and (max-width: 56em) {
+  #catalogueContainer {width:580px;}
+  #modelsContainer {width:580px;}
+  #catalogueProductsMatrix td div.sku {padding-left:20px;}
+  #catalogueProductsMatrix th#modelType {font-size: 0.8em;}
+  #catalogueProductsMatrix th span {font-size:0.7em;}
+  #catalogueProductsMatrix td {font-size: 0.7em;}
+  #headerContainer h3.header {display: none;}
+}
+
+/* min-width 1025px, large screens */
+@media only screen and (min-width: 56.25em) {
+  #catalogueContainer {width:870px;}
+  #modelsContainer {width:870px;}
+} 
+
+
+
